@@ -1,4 +1,4 @@
-Multi-Language Sentiment Analysis using NLP 🌍🔍
+Multi-Language Sentiment Analysis using NLP 🌍🔍                                                                                                                                                                
 Overview
 This project implements a Multi-Language Sentiment Analysis system using Natural Language Processing (NLP) and Machine Learning. It processes text data in five different languages, translates it to English, cleans the text, and classifies it into one of six different emotions. The model is trained using Logistic Regression with TF-IDF vectorization.
 
