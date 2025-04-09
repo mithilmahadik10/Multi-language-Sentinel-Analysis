@@ -1,0 +1,39 @@
+body {
+    background: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+textarea, input[type="text"] {
+    border-radius: 10px;
+}
+
+button {
+    border-radius: 10px;
+}
+
+.alert {
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-secondary {
+    background-color: #e2e3e5;
+    color: #383d41;
+}

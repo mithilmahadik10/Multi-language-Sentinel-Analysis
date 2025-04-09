@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">🌍 Multi-Language Sentiment Analyzer</h2>
+
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST">
+            <div class="mb-3">
+                <label class="form-label">Enter your sentence:</label>
+                <textarea class="form-control" name="text" rows="3" required>{{ text or '' }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Enter language code:</label>
+                <input type="text" class="form-control" name="language" value="{{ lang or 'en' }}" required>
+                <small class="form-text text-muted">Example: en (English), es (Spanish), fr (French), hi (Hindi)</small>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Analyze</button>
+        </form>
+
+        {% if sentiment %}
+        <div class="mt-4 alert 
+            {% if sentiment == 'Positive' %}alert-success
+            {% elif sentiment == 'Negative' %}alert-danger
+            {% else %}alert-secondary
+            {% endif %}">
+            <h5>Result:</h5>
+            <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+            <p><strong>Scores:</strong> {{ scores }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
